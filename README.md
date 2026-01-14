@@ -32,7 +32,7 @@ A simple full-stack MERN application to manage students with authentication usin
 
 🚀 Usage
 
-    Visit http://localhost:5173 (or your React port)
+    Visit https://student-management-system-eight-ashy.vercel.app/ (or your React port)
     
     Register a new account
     
