@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   const token = localStorage.getItem("token");
   const fetchStudents = async () => {
-    const res = await axios.get(`${BACKEND_URL}/api/students`, {
+    const res = await axios.get(`${BACKEND_URL}api/students`, {
       headers: { Authorization: token },
     });
     setStudents(res.data);
@@ -26,7 +26,7 @@ export default function Dashboard() {
       return;
     }
     await axios.post(
-      `${BACKEND_URL}/api/students`,
+      `${BACKEND_URL}api/students`,
       { name, rollNo, course },
       {
         headers: {
@@ -41,10 +41,16 @@ export default function Dashboard() {
   };
 
   const deleteStudent = async (id) => {
-    await axios.delete(`${BACKEND_URL}/api/students/${id}`, {
+    const student = students.find((s) => s._id === id);
+    const res = confirm(`Delete ${student.name}'s information?`);
+    if (!res) return;
+
+    await axios.delete(`${BACKEND_URL}api/students/${id}`, {
       headers: { Authorization: token },
     });
     fetchStudents();
+
+    console.log("Deletion Cancelled");
   };
 
   useEffect(() => {

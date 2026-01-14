@@ -12,7 +12,7 @@ export default function Register() {
   const BACKEND_URL = "https://student-management-system-yhqs.onrender.com/";
 
   const register = async () => {
-    await axios.post(`${BACKEND_URL}/api/auth/register`, {
+    await axios.post(`${BACKEND_URL}api/auth/register`, {
       name,
       email,
       password,

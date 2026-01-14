@@ -8,8 +8,10 @@ export default function Login() {
 
   const navigate = useNavigate();
 
+  const BACKEND_URL = "https://student-management-system-yhqs.onrender.com/";
+
   const login = async () => {
-    const res = await axios.post("http://localhost:5000/api/auth/login", {
+    const res = await axios.post(`${BACKEND_URL}api/auth/login`, {
       email,
       password,
     });
