@@ -9,8 +9,10 @@ export default function Register() {
 
   const navigate = useNavigate();
 
+  const BACKEND_URL = "https://student-management-system-yhqs.onrender.com/";
+
   const register = async () => {
-    await axios.post("http://localhost:5000/api/auth/register", {
+    await axios.post(`${BACKEND_URL}/api/auth/register`, {
       name,
       email,
       password,

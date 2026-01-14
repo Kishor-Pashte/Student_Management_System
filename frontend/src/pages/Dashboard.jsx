@@ -10,9 +10,11 @@ export default function Dashboard() {
 
   const navigate = useNavigate();
 
+  const BACKEND_URL = "https://student-management-system-yhqs.onrender.com/";
+
   const token = localStorage.getItem("token");
   const fetchStudents = async () => {
-    const res = await axios.get("http://localhost:5000/api/students", {
+    const res = await axios.get(`${BACKEND_URL}/api/students`, {
       headers: { Authorization: token },
     });
     setStudents(res.data);
@@ -24,7 +26,7 @@ export default function Dashboard() {
       return;
     }
     await axios.post(
-      "http://localhost:5000/api/students",
+      `${BACKEND_URL}/api/students`,
       { name, rollNo, course },
       {
         headers: {
@@ -39,7 +41,7 @@ export default function Dashboard() {
   };
 
   const deleteStudent = async (id) => {
-    await axios.delete(`http://localhost:5000/api/students/${id}`, {
+    await axios.delete(`${BACKEND_URL}/api/students/${id}`, {
       headers: { Authorization: token },
     });
     fetchStudents();
