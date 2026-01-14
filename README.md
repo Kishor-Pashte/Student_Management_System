@@ -3,6 +3,7 @@ MERN Student Management System
 A simple full-stack MERN application to manage students with authentication using JWT.
 
 
+
 🔹 Features
 
     User Registration & Login with JWT authentication
@@ -40,20 +41,23 @@ A simple full-stack MERN application to manage students with authentication usin
     
 
 📂 Project Structure
-backend/
-  ├─ models/
-  ├─ routes/
-  ├─ middleware/
-  ├─ server.js
-frontend/
-  ├─ src/
+    backend/
+      ├─ models/
+      ├─ routes/
+      ├─ middleware/
+      ├─ server.js
+    frontend/
+      ├─ src/
       ├─ pages/
       ├─ App.jsx
       ├─ main.jsx
-      
+
+          
 
 📌 Notes
 
-This project is for learning purposes
-
-UI is built using inline CSS, no external fra
+    This project is for learning purposes
+        
+    UI is built using inline CSS, no external frameworks
+        
+    Can be extended with edit/delete student functionality, role-based auth, etc.
